@@ -1,6 +1,7 @@
 import React from 'react'
 import Botao from './Botao'
 import InputTexto from './InputTexto'
+import style from './Formulario.module.css'
 
 type TaskProps = {
   Task: string;
@@ -14,9 +15,9 @@ const Formulario = ({ Task, atualizar, onAdd }:TaskProps) => {
   }
   return (
     <div>
-      <form onSubmit={handleOnSubmit}>
+      <form className={style.formContainer} onSubmit={handleOnSubmit}>
         <InputTexto  atualizarTarefa={atualizar} newTask={Task} />
-        <Botao aoClicar={onAdd} />
+        <Botao tarefa={Task} aoClicar={onAdd} />
       </form>
     </div>
   )

@@ -1,0 +1,50 @@
+.botao {
+    background-color: #8d00ff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.botao:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+
+.botao:hover {
+    opacity: 1;
+}
+
+.formContainer {
+    display: flex;
+    gap: 10px;
+    /* espaço entre o input e o botão */
+    align-items: center;
+    /* alinha verticalmente */
+}
+
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #8d00ff;
+}
+
+.input::placeholder {
+    color: #8d00ff;
+}
+
+.input:focus {
+    border-color: #8d00ff;
+    outline: none;
+    /* aqui sim, remove o azul padrão do navegador */
+}
+
+.input:not(:focus) {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    color: black;
+}

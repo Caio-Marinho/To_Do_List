@@ -1,16 +1,34 @@
-import React from 'react'
-import CorpoLista from './corpoLista'
+import { Tarefa } from '../../types/Tarefa';
+import CorpoLista from './CorpoLista'
 import Item from './Item'
 
 type PropsLista = {
-    Lista: string[];
-    remover: (indice: number) => void;
+  Lista: Tarefa[];
+  remover: (indice: string) => void;
+  alternarSelecionado: (id: string) => void;
 }
 
-const ListaItem = ({Lista,remover}:PropsLista) => {
+const ListaItem = ({ Lista, remover, alternarSelecionado }: PropsLista) => {
   return (
     <CorpoLista>
-      {Lista.map((item: string,index:number) => <Item removerTarefa={() => remover(index)} key={index} index={0}>{item}</Item>)}
+      {Lista.map((item) =>
+        <>
+          <Item
+            alternarSelecionado={alternarSelecionado}
+            selecionado={item.selecionado}
+            titulo={item.titulo}
+            removerTarefa={remover}
+            key={item.id}
+            index={item.id}>
+            ID: {item.id}
+            <br />
+            Titulo: {item.titulo}
+            <br/>
+            Estado: {item.selecionado  ? 'Verdadeiro' : 'Falso'}
+          </Item>
+        </>
+      )
+      }
     </CorpoLista>
   )
 }

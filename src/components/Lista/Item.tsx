@@ -1,17 +1,22 @@
-import React from 'react'
+import React from 'react';
+import style from './Lista.module.css'
 
 type PropsLista = {
     children: React.ReactNode;
-    removerTarefa: (indice: number) => void;
-    index: number
+    removerTarefa: (indice: string) => void;
+    alternarSelecionado: (id: string) => void;
+    index: string
+    selecionado: boolean;
+    titulo:string
 }
 
-const Item = ({ children, removerTarefa, index }: PropsLista) => {
+const Item = ({ children, removerTarefa, index,selecionado,titulo,alternarSelecionado }: PropsLista) => {
 
     return (
         <li>
-            {children}
-            <button type="button" onClick={() => removerTarefa(index)}>❌</button>
+            <input type="checkbox" checked={selecionado} onChange={() => alternarSelecionado(index)} title={titulo} />
+            <span className={style.textoAtividade}>{children}</span>
+            <button className={style.botaoAcao} type="button" onClick={() => removerTarefa(index)}>❌</button>
         </li>
     )
 }
