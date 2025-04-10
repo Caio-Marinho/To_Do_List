@@ -24,6 +24,8 @@
     /* espaço entre o input e o botão */
     align-items: center;
     /* alinha verticalmente */
+    justify-content: center;
+    /* alinha horizontalmente */
 }
 
 

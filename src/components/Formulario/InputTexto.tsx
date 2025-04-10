@@ -11,7 +11,9 @@ const InputTexto = ({newTask, atualizarTarefa}:TaskInputProps) => {
     <input type="text" placeholder="Nova tarefa"
     value={newTask}
     onChange={atualizarTarefa}
-    className={style.input}/>
+    className={style.input}
+    maxLength={40}
+    />
   )
 }
 

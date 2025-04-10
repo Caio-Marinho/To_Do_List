@@ -36,7 +36,7 @@ function App() {
         <button onClick={excluirSelecionados}>
           Excluir {todosSelecionados ? 'todos' : selecionados} Selecionados
         </button>
-      )}
+      )} 
     </>
   )
 }

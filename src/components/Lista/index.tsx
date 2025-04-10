@@ -24,7 +24,7 @@ const ListaItem = ({ Lista, remover, alternarSelecionado }: PropsLista) => {
             <br />
             Titulo: {item.titulo}
             <br/>
-            Estado: {item.selecionado  ? 'Verdadeiro' : 'Falso'}
+            Estado: {item.selecionado  ? 'Feito(a)' : 'A Fazer ou Pendente'}
           </Item>
         </>
       )
