@@ -15,7 +15,7 @@ const Formulario = ({ Task, atualizar, onAdd }:TaskProps) => {
   }
   return (
     <div>
-      <form className={style.formContainer} onSubmit={handleOnSubmit}>
+      <form data-netlify="true"  className={style.formContainer} onSubmit={handleOnSubmit}>
         <InputTexto  atualizarTarefa={atualizar} newTask={Task} />
         <Botao tarefa={Task} aoClicar={onAdd} />
       </form>
