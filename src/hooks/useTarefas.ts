@@ -18,7 +18,7 @@ export function useTarefas() {
       })
       .catch((err) => console.error('Erro ao buscar tarefas:', err))
       .finally(() => setCarregando(false));
-    console.log(tarefas);
+    
   }, [tarefas]);
 
   const adicionarTarefa = async (titulo: string) => {
