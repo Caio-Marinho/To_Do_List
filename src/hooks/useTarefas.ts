@@ -25,7 +25,6 @@ export function useTarefas() {
     try {
       const res = await axios.post('http://localhost:3001/tarefas', {
         titulo: titulo,
-        selecionado: false
       });
       setTarefas(prev => [...prev, res.data]);
     } catch (err) {
@@ -47,7 +46,7 @@ export function useTarefas() {
       const res = await axios.put(`http://localhost:3001/tarefas/${id}`, {
         id:id,
         titulo: titulo,
-        selecionado: selecionado
+        ...(selecionado && { selecionado: selecionado }),
       });
       setTarefas((prev) =>
         prev.map((tarefa) => (tarefa.id === id ? res.data : tarefa))

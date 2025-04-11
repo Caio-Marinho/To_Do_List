@@ -12,7 +12,6 @@ const ListaItem = ({ Lista, remover, alternarSelecionado }: PropsLista) => {
   return (
     <CorpoLista>
       {Lista.map((item) =>
-        <>
           <Item
             alternarSelecionado={alternarSelecionado}
             selecionado={item.selecionado}
@@ -26,7 +25,6 @@ const ListaItem = ({ Lista, remover, alternarSelecionado }: PropsLista) => {
             <br/>
             Estado: {item.selecionado  ? 'Feito(a)' : 'A Fazer ou Pendente'}
           </Item>
-        </>
       )
       }
     </CorpoLista>
